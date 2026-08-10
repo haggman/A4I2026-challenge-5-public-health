@@ -10,7 +10,7 @@ A mobile clinic is a van with a nurse practitioner, a blood-pressure cuff, a glu
 folding table. It parks somewhere on a Saturday, it sees forty people, and it drives away.
 
 Whoever decides where it parks has made a public health decision worth more than most of what
-happens inside it. Park it in the wrong neighbourhood and you have run a very expensive health fair
+happens inside it. Park it in the wrong neighborhood and you have run a very expensive health fair
 for people who already have a doctor.
 
 The person making that decision has a county of maybe three hundred neighbourhoods, one van, and
@@ -40,11 +40,11 @@ what each of you needs in the first fifteen minutes.
 | If you are… | Read now | Come back for |
 |---|---|---|
 | **Everyone, together** | [The five things](#the-five-things-youre-working-with) · [Three tracks](#three-tracks-one-architecture) · [What you're building](#what-youre-building) · [Pick your county](#now-pick-your-county) | — |
-| **Team lead** | [Step 0](#step-0organise-your-team) · [How you'll be judged](#how-youll-be-judged) | [What will set yours apart](#what-will-set-yours-apart)—read it *before* you write code, not before you demo |
+| **Team lead** | [Step 0](#step-0organize-your-team) · [How you'll be judged](#how-youll-be-judged) | [What will set yours apart](#what-will-set-yours-apart)—read it *before* you write code, not before you demo |
 | **Data lane** | [Step 4, load the data](#step-4load-the-data) · [What you'll have](#what-youll-have) | [The data, and why we chose it](#the-data-and-why-we-chose-it) · Section 12 of the notebook |
 | **Agent lane** | [The technology](#the-technology-youll-use)—**all of it, now.** Your differentiator is an architecture and you cannot bolt it on at the end | [`agent/README.md`](agent/README.md) · Section 13 of the notebook · [Reference](#reference) |
 | **Front end lane** | [Front end lane](#front-end-lane2-people) | [Your output artifact](#your-output-artifact-the-clinic-plan) |
-| **Story lane** | [What the data actually says](#what-the-data-actually-says) | [Your output artifact](#your-output-artifact-the-clinic-plan) · [The data](#the-data-and-why-we-chose-it)—which numbers are measured and which are modelled, because you will be asked |
+| **Story lane** | [What the data actually says](#what-the-data-actually-says) | [Your output artifact](#your-output-artifact-the-clinic-plan) · [The data](#the-data-and-why-we-chose-it)—which numbers are measured and which are modeled, because you will be asked |
 
 **Three things everybody should know by the end of hour one**, whatever lane you are in:
 
@@ -52,7 +52,7 @@ what each of you needs in the first fifteen minutes.
    later.** The other four challenges hand teams a technology that runs over prepared data. Yours is
    a shape you have to design. Decide it in the first ten minutes, not after lunch.
 2. **Your tables are at four different resolutions and none of them says so.** A census tract, a
-   12 km modelling grid wearing a tract ID, a facility point, and a multi-county Health Service
+   12 km modeling grid wearing a tract ID, a facility point, and a multi-county Health Service
    Area written onto a county key. An agent that blends all four into one confident sentence has said
    something the data cannot support, and that is the most common way to lose points here.
 3. **Race is banned as a model input and required as an audit of your output.** Not a footnote—it is
@@ -69,7 +69,7 @@ Small vocabulary, used consistently everywhere from here on. Worth thirty second
 |---|---|
 | **Census tract** | A Census Bureau area of roughly 4,000 people. Small enough to park a van in, large enough that nobody in it is identifiable. Our unit for everything about **people** |
 | **Safety-net site** | A clinic that will see somebody with no insurance on a sliding scale—an FQHC or a HRSA health center site. **Not the same as "a clinic."** A hospital is a bill |
-| **Shortage *area* vs shortage *facility*** | An **area** says a neighbourhood is underserved—a siting signal. A **facility** says a clinic serves an underserved population—a marker of where care already *is*. Two federal layers, opposite meanings, [and confusing them is the easiest serious mistake here](#nine-defects-you-will-meet-and-why-we-show-them-to-you) |
+| **Shortage *area* vs shortage *facility*** | An **area** says a neighborhood is underserved—a siting signal. A **facility** says a clinic serves an underserved population—a marker of where care already *is*. Two federal layers, opposite meanings, [and confusing them is the easiest serious mistake here](#nine-defects-you-will-meet-and-why-we-show-them-to-you) |
 | **Health Service Area** | A group of counties that share patterns of care-seeking. The current-disease numbers are computed for one of these and then written onto **every county in it.** Fulton's covers four counties, Travis's six, Houston's eight |
 | **Resolution** | How fine a claim the data can actually support—which is **not** the same as how many digits it has. This is the whole challenge |
 
@@ -86,7 +86,7 @@ want to tell on stage.
 |---|---|---|---|
 | 🚐 **Siting** | Next month's calendar is empty and four Saturdays need filling | An outreach lead at the county health department | Every ranking you can build is defensible. Choosing *between* them, out loud, is the job |
 | 📋 **Accountability** | A funder wants to know the money went where the need was, not where the parking was easy | A program director writing a grant report | Your best evidence is a demographic audit of a plan you were forbidden to build on demographics |
-| 📣 **Explanation** | The van is coming to one neighbourhood and not the one next door, and somebody has to say why | A community health worker who lives there | Everything above is written for a professional. This has to be readable, in more than one language, by somebody who is not |
+| 📣 **Explanation** | The van is coming to one neighborhood and not the one next door, and somebody has to say why | A community health worker who lives there | Everything above is written for a professional. This has to be readable, in more than one language, by somebody who is not |
 
 **These are suggestions, not a menu you are confined to.** Pick one, combine two, or invent your own.
 
@@ -114,7 +114,7 @@ differentiator, and it fell out of the problem rather than being bolted onto it.
 
 An agent an outreach lead can hand a question to on a Thursday and get an answer from that she can
 put on next month's calendar on the Friday—assembled from data she does not have time to pull
-together herself, and honest about which of its answers are solid and which are modelled.
+together herself, and honest about which of its answers are solid and which are modeled.
 
 Picture a single afternoon:
 
@@ -131,12 +131,12 @@ Here is what she asks between now and the end of the month, and what answers eac
 | What she asks | What answers it |
 |---|---|
 | *"Which neighbourhoods have the most people who are sick and not being seen?"* | `burden_tracts`—uninsured share, asthma, COPD, diabetes, high blood pressure, and `pct_checkup`, which counts adults who **did** have a routine visit in the past year. **Low is bad on that one and high is bad on the others**—read the direction before you rank |
-| *"How far is each neighbourhood from a clinic that will actually take them?"* | `tract_access`—**two** distances per tract, to any care site and to a safety-net one, and the difference between them |
-| *"Who can't get to a clinic even if there is one?"* | `burden_tracts`—no-vehicle households, mobility difficulty, over-65 share. **A car makes five kilometres nothing** |
+| *"How far is each neighborhood from a clinic that will actually take them?"* | `tract_access`—**two** distances per tract, to any care site and to a safety-net one, and the difference between them |
+| *"Who can't get to a clinic even if there is one?"* | `burden_tracts`—no-vehicle households, mobility difficulty, over-65 share. **A car makes five kilometers nothing** |
 | *"Has the federal government already said this area is underserved?"* | `shortage_areas`, with `HPSA_SCORE`—**and for some counties the honest answer is that it has not** |
-| *"Is respiratory illness rising right now?"* | `disease_weekly`—**and it is a multi-county regional number on a county key, so it cannot answer this about a neighbourhood** |
+| *"Is respiratory illness rising right now?"* | `disease_weekly`—**and it is a multi-county regional number on a county key, so it cannot answer this about a neighborhood** |
 | *"Is the air bad here?"* | `exposure_tracts`—but read [section 2 of the notebook](#the-hook-you-will-hit-in-the-first-ten-minutes) before you use it the way you are about to |
-| *"How do I tell the neighbourhood we didn't pick why we didn't pick them?"* | Your agent's judgment. This is the deliverable |
+| *"How do I tell the neighborhood we didn't pick why we didn't pick them?"* | Your agent's judgment. This is the deliverable |
 
 Notice these need **different things**. Three of those questions are answered at tract level, one
 by federal shortage polygons, one at a multi-county region and one on a 12 km grid—and working out
@@ -155,12 +155,12 @@ and having a judge find it reads as the opposite.
 
 | The question | What you'd need to add |
 |---|---|
-| *"How long does it take to get there on the bus?"* | **No licence-clean federal dataset of travel time to health care exists.** The best transit-accessibility dataset in the country is CC BY-NC and therefore unusable here. We give you straight-line distance and `HPSA_SCORE`, which folds in a federally computed travel-time term |
+| *"How long does it take to get there on the bus?"* | **No license-clean federal dataset of travel time to health care exists.** The best transit-accessibility dataset in the country is CC BY-NC and therefore unusable here. We give you straight-line distance and `HPSA_SCORE`, which folds in a federally computed travel-time term |
 | *"Where are the free clinics and the county clinics?"* | **No national list exists.** Our facility layers are federal only—CMS-certified and HRSA-funded. Every distance we give you is therefore an *upper bound*: the real nearest option may be closer and we cannot see it |
 | *"Where are the pharmacies?"* | No federal file provides them without individual-level personal data. The CMS pharmacy file has NPIs and no addresses; NPPES ships practitioners' names and often their home addresses. **Naming this exclusion is a stronger answer than quietly using NPPES** |
-| *"Where do other mobile clinics already go?"* | The one national registry has no licence, no bulk download, and asserts intellectual property over its contents. Do not scrape it |
-| *"How many people in this tract have asthma?"* | Nothing. CDC PLACES gives **modelled prevalence**, not counts—a prediction about people like the people who live there. Use it and say it is modelled |
-| *"Is COVID rising in this neighbourhood?"* | Nothing at that grain, and this is the trap. The file has a real county FIPS and looks county-level. **It is a Health Service Area figure written onto every county in the area** |
+| *"Where do other mobile clinics already go?"* | The one national registry has no license, no bulk download, and asserts intellectual property over its contents. Do not scrape it |
+| *"How many people in this tract have asthma?"* | Nothing. CDC PLACES gives **modeled prevalence**, not counts—a prediction about people like the people who live there. Use it and say it is modeled |
+| *"Is COVID rising in this neighborhood?"* | Nothing at that grain, and this is the trap. The file has a real county FIPS and looks county-level. **It is a Health Service Area figure written onto every county in the area** |
 | *"Which specific people are unmanaged diabetics?"* | Nothing, and there should be nothing. Individual-level data is prohibited at this event. This is a line, not an obstacle |
 
 ---
@@ -205,7 +205,7 @@ different things.
 
 **But Fulton ships an empty `shortage_areas` table**, and that is the trade. All 99 of its
 designations are `Proposed For Withdrawal`, so the county has zero live ones. You lose `HPSA_SCORE`
-as a neighbourhood-level signal, which is our only travel-burden measure. If your idea leans on
+as a neighborhood-level signal, which is our only travel-burden measure. If your idea leans on
 shortage areas, switch to **Cook** and you get 498 of them.
 
 **Santa Clara and the Bronx have no current disease data at all.** Not sparse, not lagging:
@@ -221,9 +221,9 @@ reliable transportation—for 40 states and not the other 11, and Texas is one o
 county is blind to transport: `pct_no_vehicle` from CDC SVI survives, and it measures vehicle
 *ownership*, which is not the same as being able to get a ride. Know which one you are quoting.
 
-**The Bronx barely has the phenomenon this challenge is built on.** Its median tract is 390 metres
+**The Bronx barely has the phenomenon this challenge is built on.** Its median tract is 390 meters
 from care, no tract in the borough is more than 5 km from a safety-net site, and the largest
-safety-net gap anywhere in it is 650 metres. That makes it the *sharpest* test of whether your agent
+safety-net gap anywhere in it is 650 meters. That makes it the *sharpest* test of whether your agent
 understands what it is looking at—an agent that recommends a mobile clinic in the Bronx on distance
 grounds has not read its own numbers—and the weakest case for actually sending one.
 
@@ -351,7 +351,7 @@ You have **4.5 hours** and there are **8–10 of you**. That is too many people 
 and the biggest risk to your team is the first hour disappearing into setup. Spend twenty minutes
 on Step 0. It pays for itself twice over.
 
-### Step 0—Organise your team
+### Step 0—Organize your team
 
 **Pick a team lead.** One person who makes the call when you are behind—and you *will* be behind.
 
@@ -381,7 +381,7 @@ owns everything between raw tables and a query the agent can call:
   queries their tools will wrap exist. This is the equivalent of training a model in other
   challenges: an *input* to the agent, not a step 4.
 - **Decide what "needs the van" means** and encode it. Top decile on uninsured? Worst on three
-  measures at once? Distance-weighted by no-vehicle share? This is a modelling decision, it is
+  measures at once? Distance-weighted by no-vehicle share? This is a modeling decision, it is
   yours, and you will be asked for it.
 - **Keep track of which resolution each number came from**, all the way through. If it collapses
   anywhere in your pipeline it will collapse in your agent's answers too.
@@ -389,7 +389,7 @@ owns everything between raw tables and a query the agent can call:
   least one of them is worth a slide.
 - **The equity audit** ([explained below](#what-auditing-the-outcome-actually-means)). This one is
   not optional on this challenge—it is a requirement and it is also your architecture argument.
-- **Decide whether to bring extra data**, and if so, source it and check the licence.
+- **Decide whether to bring extra data**, and if so, source it and check the license.
 
 #### Agent lane—2 to 3 people
 
@@ -400,7 +400,7 @@ differentiator on at the end.
   which state keys pass between them. Draw it on the whiteboard before anybody opens an editor.
 - **Prompt engineering.** Expect this to be the hardest part. Your system instructions have to teach
   each agent who it is talking to, when to reach for which tool, and—importantly—**when to refuse.**
-  An agent that confidently says "COVID is rising in this neighbourhood" from a four-county number is
+  An agent that confidently says "COVID is rising in this neighborhood" from a four-county number is
   worse than one that says *"I can tell you about the region; I cannot tell you about this street."*
 - **At least one tool you built.** Required. The obvious one wraps a tract query. The more valuable
   one holds the logic that is not a single query—turning a ranked list into a plan with a
@@ -452,9 +452,9 @@ that lands beats a thorough walkthrough nobody has time to hear.**
 - **The Clinic Plan**—your output artifact (see below). Something an outreach lead would actually
   receive.
 - **The strongest thing you can say on stage is a number from your own data that surprised you.**
-  Not a slide of architecture boxes. One number, one neighbourhood, one sentence.
+  Not a slide of architecture boxes. One number, one neighborhood, one sentence.
 - **The honest limitations.** Judges explicitly reward this. One line in the deck is enough.
-- **Know which of your numbers are measured and which are modelled.** You will be asked. The answer
+- **Know which of your numbers are measured and which are modeled.** You will be asked. The answer
   is in the notebook and it is a good one—make sure whoever presents can give it.
 
 Time the whole thing out loud at least once. Teams almost always run long.
@@ -473,7 +473,7 @@ about itself. That is the point.
 - **Who this plan lands on.** The equity audit, run against the demographics you were forbidden to
   rank on, reported whether or not it is comfortable. **A negative result honestly reported beats a
   clean-looking model nobody checked.**
-- **The thing you hand to the neighbourhood.** A flyer, a text message, a script for a community
+- **The thing you hand to the neighborhood.** A flyer, a text message, a script for a community
   health worker—plain language, and in more than one language if your county needs it. This is the
   part every team will skip and it is the part the challenge is named for. It is also the cleanest
   possible demonstration that one system prompt could not have written all four of these.
@@ -607,9 +607,9 @@ describe care, and one is the join we did for you**:
 | `burden_tracts` | People | One row per census tract—uninsured, checkup, asthma, COPD, diabetes, blood pressure, disability and mobility, no-vehicle households, over-65 share, and a centroid |
 | `exposure_tracts` | People | One row per tract—mean and maximum PM2.5 and the number of days over each of four thresholds. **Read section 2 before you rank on it.** Its tract set is slightly *larger* than `burden_tracts`, because EPA models every tract that exists and PLACES suppresses the ones too small to model—so join LEFT from burden, not INNER |
 | `disease_weekly` | People | One row per week—emergency-department visit percentages for COVID, influenza and RSV. **A Health Service Area figure on a county key** |
-| `care_sites` | Care | Every federally recognised care site inside your county, with coordinates and a `site_kind` |
+| `care_sites` | Care | Every federally recognized care site inside your county, with coordinates and a `site_kind` |
 | `care_sites_state` | Care | The same, for the whole state, before the county filter. Useful when a clinic just over the county line is the nearest one |
-| `shortage_areas` | Care | HRSA designations saying **a neighbourhood is underserved**. A siting signal. **Legitimately empty in four of our six counties** |
+| `shortage_areas` | Care | HRSA designations saying **a neighborhood is underserved**. A siting signal. **Legitimately empty in four of our six counties** |
 | `shortage_facilities` | Care | HRSA designations saying **a clinic serves an underserved population**. This marks where care already *is*. **Do not `UNION` it with the one above** |
 | `tract_access` | The join | One row per tract—distance to the nearest care site of any kind, distance to the nearest safety-net site, and the difference. **This is the table the challenge turns on** |
 
@@ -622,20 +622,20 @@ Eight tables, in `<your-project>.a4i_health`, from five publishers—plus
 facilities are actually inside your county, because none of the federal facility layers publishes
 a usable county code.
 
-| Source | Feeds | Licence |
+| Source | Feeds | License |
 |---|---|---|
-| **CDC PLACES** 2025 release | `burden_tracts` | `PUBLIC_DOMAIN`, machine-readable in the dataset metadata. The cleanest licence in the pack |
+| **CDC PLACES** 2025 release | `burden_tracts` | `PUBLIC_DOMAIN`, machine-readable in the dataset metadata. The cleanest license in the pack |
 | **CDC/ATSDR Social Vulnerability Index** 2022 | `burden_tracts` | No restriction stated; the service's `copyrightText` is an attribution credit. Federal work. Cite the required citation string |
 | **EPA/CDC Daily Census Tract-Level PM2.5** | `exposure_tracts` | EPA data, republished by CDC. EPA states its data is public domain under 17 U.S.C. § 105. **See the note below** |
 | **HRSA** health centers, shortage areas and facilities · **CMS** certified facilities | `care_sites`, `shortage_*` | HRSA states *"Usage limitations: None"*. **See the note below** |
 | **CDC National Syndromic Surveillance Program** | `disease_weekly` | `USGOV_WORKS`, *"Public Domain U.S. Government"* |
 
-> ⚠️ **Two of those rows have a documented licence discrepancy, and we are telling you rather than
+> ⚠️ **Two of those rows have a documented license discrepancy, and we are telling you rather than
 > hiding it.** For the PM2.5 and HRSA sources, `catalog.data.gov` tags the record **ODbL**—a
-> share-alike licence—while the publisher's own page states public domain or no usage limitation.
+> share-alike license—while the publisher's own page states public domain or no usage limitation.
 > Federal works enter the public domain automatically under 17 U.S.C. § 105, and sibling records on
 > the same catalog correctly carry `usa.gov/government-works`, which reads like a catalogue metadata
-> defect rather than a licence grant. We cite the publisher. **If you bring your own data, this is
+> defect rather than a license grant. We cite the publisher. **If you bring your own data, this is
 > exactly the shape of thing to check**—and see [Bringing your own data](#bringing-your-own-data),
 > because share-alike is on the automatic-rejection list for anything you add.
 
@@ -666,8 +666,8 @@ these neighbourhoods than the air does**—2.11 against 0.05. Houston, which oug
 separates its cleanest and dirtiest decile by nine percent. The Bronx—which has one of the most
 documented asthma disparities in the country—separates by one and a third percent.
 
-**Because it was never a tract-level measurement.** EPA's model runs on a **12-kilometre grid**, then
-reports the value at each tract's centre point. A 12 km cell covers dozens of tracts and they all
+**Because it was never a tract-level measurement.** EPA's model runs on a **12-kilometer grid**, then
+reports the value at each tract's center point. A 12 km cell covers dozens of tracts and they all
 inherit the same number. The Bronx is about 10 km across. It is roughly one cell.
 
 **Precision is not resolution.** The identifier is real, the decimals are real, the daily frequency
@@ -683,7 +683,7 @@ and your agent has to reason across both and say which claim came from which sca
 Run the notebook and you get these for your own county. Here is Fulton, so the story lane can start
 writing before the data lane finishes.
 
-**326 census tracts. 1,066,710 people. 67 federally recognised care sites. And this:**
+**326 census tracts. 1,066,710 people. 67 federally recognized care sites. And this:**
 
 | Distance from a Fulton census tract | Median | Worst |
 |---|---:|---:|
@@ -699,23 +699,23 @@ And the tract at the top of the list when you cross need against distance:
 > **Tract 13121010214.** 1,938 people. 14% of working-age adults uninsured. **43% of households
 > have no vehicle.** 8.1 km from a clinic that will see them.
 
-**A car makes eight kilometres nothing. No car makes eight kilometres a day off work**, two bus
+**A car makes eight kilometers nothing. No car makes eight kilometers a day off work**, two bus
 transfers, and childcare. That is the gap a mobile clinic exists to close, and it is the strongest
 single argument your demo can make.
 
 #### The warning that comes with those numbers
 
 **Straight-line distance is not travel time.** We are measuring across a map, not along roads. A
-tract two kilometres from a clinic on the far side of an interstate is not two kilometres from that
+tract two kilometers from a clinic on the far side of an interstate is not two kilometers from that
 clinic.
 
 **Our facility list is federal only.** County clinics, free clinics, charitable providers and
-pharmacy minute-clinics are not in these files because no licence-clean national list of them
+pharmacy minute-clinics are not in these files because no license-clean national list of them
 exists. **Every distance above is therefore an upper bound**—the real nearest option may be closer
 and we cannot see it. Do not report these as "the nearest care available." Report them as "the
-nearest federally recognised site," which is what they are.
+nearest federally recognized site," which is what they are.
 
-**And the ranking is only as good as the estimate underneath it.** PLACES values are modelled, not
+**And the ranking is only as good as the estimate underneath it.** PLACES values are modeled, not
 counted—a prediction about people like the people who live there, smoothed toward the mean. Two
 tracts a percentage point apart are, quite possibly, the same tract.
 
@@ -726,7 +726,7 @@ The notebook does not hand you a cleaned table, because these are the teaching:
 1. **The 12 km grid wearing an 11-digit tract ID.** Described above. It is first on this list because
    it is the one that will silently ruin a ranking, and nothing about the file warns you.
 2. **There are two HPSA layers and they mean opposite things.** Layer 11 is shortage *areas*—this
-   neighbourhood is underserved, a siting signal. Layer 9 is shortage *facilities*—this clinic serves
+   neighborhood is underserved, a siting signal. Layer 9 is shortage *facilities*—this clinic serves
    an underserved population, which marks where care already **is**. Every FQHC is designated
    automatically just for being an FQHC, so the facility layer for Cook County includes a federal
    jail with a score of 3. **A team that merges the layers will be siting a mobile health clinic
@@ -740,7 +740,7 @@ The notebook does not hand you a cleaned table, because these are the teaching:
    with a real county FIPS, so it looks county-level. The values are computed for a **Health
    Service Area**—Fulton shares its number with Clayton, DeKalb and Gwinnett; Houston's covers
    eight counties—and written onto every county in the group. An agent that says "COVID visits are
-   rising in this neighbourhood" from this file has made a claim the data cannot support. Note also
+   rising in this neighborhood" from this file has made a claim the data cannot support. Note also
    that the `fips` column is typed as a **number** rather than text in this dataset, so it takes no
    quotes in a filter and California's counties are four digits, not five.
 5. **`latitude` and `longitude` are transposed** in the air-quality files. In every row. Plot them as
@@ -776,17 +776,17 @@ WARN is the kind of thing that ends up on a slide.
 | Left out | Why |
 |---|---|
 | CDC SVI **Theme 3** and `RPL_THEMES` | Theme 3 is racial and ethnic minority status, and `RPL_THEMES` bakes it into a composite with no column to drop. See below |
-| `FQHC_ADMIN_CONTACT_NM` / `_EMAIL` / `_PHONE_NUM` | Named individuals with email addresses and phone numbers. Individual-level personal data is an automatic rejection here, and the only reliable defence is never requesting the columns |
+| `FQHC_ADMIN_CONTACT_NM` / `_EMAIL` / `_PHONE_NUM` | Named individuals with email addresses and phone numbers. Individual-level personal data is an automatic rejection here, and the only reliable defense is never requesting the columns |
 | Pharmacy locations | No federal file provides them without individual-level personal data. NPPES ships practitioners' names and often home addresses; the CMS pharmacy file has NPIs and no addresses |
-| Mobile clinic registries | The one national candidate has no licence, no bulk download, and asserts intellectual property over its contents |
-| CDC WONDER | No sub-national API at all—*"Only national data are available for query by the API"*—plus a data use agreement restricting derived publication. Mortality is also a lagging indicator for a preventive programme |
-| Transit accessibility | **Access Across America: Transit 2024** is tract-level, FHWA-sponsored, the best dataset in the country for this—and **CC BY-NC 4.0**. Federal funding does not imply federal licence terms, and this is the clearest example of that in the pack |
-| Wastewater surveillance | Real, current and licence-clean—but sewersheds span multiple counties and two thirds of US counties have no site. A corroborating signal, never a base layer |
+| Mobile clinic registries | The one national candidate has no license, no bulk download, and asserts intellectual property over its contents |
+| CDC WONDER | No sub-national API at all—*"Only national data are available for query by the API"*—plus a data use agreement restricting derived publication. Mortality is also a lagging indicator for a preventive program |
+| Transit accessibility | **Access Across America: Transit 2024** is tract-level, FHWA-sponsored, the best dataset in the country for this—and **CC BY-NC 4.0**. Federal funding does not imply federal license terms, and this is the clearest example of that in the pack |
+| Wastewater surveillance | Real, current and license-clean—but sewersheds span multiple counties and two thirds of US counties have no site. A corroborating signal, never a base layer |
 | Anything patient-level | This agent plans where a van goes. It does not screen, triage, or advise anybody about their health |
 
 **What makes this challenge different from the other four:** everything in that list is a *place*
 you cannot see. This is the only challenge in the pack where the thing you are planning for is a
-human body, and the line between "which neighbourhood needs outreach" and "which person is sick" is
+human body, and the line between "which neighborhood needs outreach" and "which person is sick" is
 one you have to hold deliberately all afternoon. It is easy to cross by accident and there is no
 version of crossing it that scores well.
 
@@ -818,7 +818,7 @@ This is a rule for the whole event, and the reasoning matters more than the rule
 - Race genuinely **does** correlate with these outcomes. Do not claim otherwise—anyone who knows the
   literature will correct you, and they will be right.
 - But it is a **proxy** for things we can measure directly. The causal variables here are structural
-  and physical—insurance coverage, vehicle access, distance to a clinic, whether the neighbourhood
+  and physical—insurance coverage, vehicle access, distance to a clinic, whether the neighborhood
   has a provider at all. Race is a cruder measurement of something we already have a better
   instrument for.
 - **Removing the column does not remove the bias.** Correlated proxies survive. This is "fairness
@@ -869,14 +869,14 @@ does that nobody else's will:
 - **Write the flyer.** The fourth part of the Clinic Plan is the part everybody will cut for time,
   and it is the part the challenge is named for.
 - **Bring a dataset nobody else has**—your county's own clinic roster, a transit GTFS feed, a state
-  licensing database. (See below—check the licence first.)
+  licensing database. (See below—check the license first.)
 
 Read [how you'll be judged](#how-youll-be-judged) *before* you decide. It's at the bottom, it takes
 two minutes, and it will change what you build.
 
 ### The add-on we'd build if we had another four hours
 
-The data section admits something: **there is no licence-clean federal dataset of travel time to
+The data section admits something: **there is no license-clean federal dataset of travel time to
 health care, and no national list of the free and county clinics people actually use.** We looked.
 Both gaps sit exactly on top of the population this challenge is about.
 
@@ -909,7 +909,7 @@ bring it. Thoughtful sourcing is exactly the judgment this challenge rewards.
 **Augment, don't replace.** Get the core working first. "Let's find better data" is one of the most
 reliable ways to lose ninety minutes and have nothing to demo.
 
-**Check the licence before you load it.** This is a publicly branded event and winning projects get
+**Check the license before you load it.** This is a publicly branded event and winning projects get
 promoted. Anything you bring has to clear the same bar we applied to ourselves:
 
 | | |
@@ -918,12 +918,12 @@ promoted. Anything you bring has to clear the same bar we applied to ourselves:
 | ❌ No **NoDerivatives** (ND) | Building on the data is the whole point |
 | ❌ No **share-alike** (ODbL, CC BY-SA) | It would encumber what *you* build |
 | ❌ No **individual-level personal data** | Aggregate public statistics only |
-| ❌ No **unstated licence** | No licence means no rights granted |
+| ❌ No **unstated license** | No license means no rights granted |
 | ✅ Public domain, CC0, US Government works | Safe |
 
 **The trap most likely to catch you on this challenge:** *Access Across America: Transit 2024* is
 tract-level, federally sponsored, and the best transit-accessibility dataset in the United States.
-It is licensed **CC BY-NC 4.0**. It is exactly what you want and you cannot use it. **Federal funding does not imply federal licence terms**, and this
+It is licensed **CC BY-NC 4.0**. It is exactly what you want and you cannot use it. **Federal funding does not imply federal license terms**, and this
 domain is full of that shape—university-hosted, agency-funded, restrictively licensed.
 
 **And one that's specific to you:** health data is saturated with files that are technically
@@ -949,7 +949,7 @@ agent/
                                       Empty otherwise. Your agent goes here
 ```
 
-`agent/` is empty on purpose. We built the on-ramp—every federally recognised care site in your
+`agent/` is empty on purpose. We built the on-ramp—every federally recognized care site in your
 county with coordinates, the tracts around them with disease burden and insurance and vehicle
 access, the federal shortage designations with the withdrawal trap already filtered, the air at the
 only scale it works, the current disease signal with its real resolution stated, both distances
@@ -984,8 +984,8 @@ This is the one teams under-invest in, because it's least visible in a demo. It'
 score and the easiest place to stand out. Four concrete things:
 
 **Data decisions you can defend.** What does "needs the van" mean in your agent, and why that
-threshold? Which of your figures are measured and which are modelled? Which are tract-level and
-which are a multi-county region? If you brought your own dataset, do you know its licence?
+threshold? Which of your figures are measured and which are modeled? Which are tract-level and
+which are a multi-county region? If you brought your own dataset, do you know its license?
 
 **Validation.** Did you check your tables before building, or assume no error meant no problem? The
 notebook ships a validation section with two verdicts rather than one—using it, and saying what it
@@ -1002,7 +1002,7 @@ Four of six counties have no shortage areas and two have no disease trend at all
 volunteers its limitations shows more skill than one that oversells—and judges are told to reward it.
 
 One warning worth internalising: **in this domain a confident wrong answer is the worst possible
-output.** An agent that says "respiratory illness is rising in this neighbourhood" from a
+output.** An agent that says "respiratory illness is rising in this neighborhood" from a
 four-county number, or ranks tracts on an air-quality difference of two percent, has produced
 something plausible, specific and false about people's health. A judge who asks "which scale did
 that claim come from?" should get a good answer.
@@ -1011,7 +1011,7 @@ that claim come from?" should get a good answer.
 
 Several places in this challenge ask you to choose rather than follow instructions—which county,
 which track, what "needs the van" means, how many agents and what each one is forbidden to see, how
-to weigh a modelled estimate against a measured distance, what to cut when you're behind. **None of
+to weigh a modeled estimate against a measured distance, what to cut when you're behind. **None of
 those have a single right answer, and judges are not checking them against a key.** They're asking
 whether you made the choice on purpose and can say why.
 
@@ -1048,9 +1048,9 @@ whether you made the choice on purpose and can say why.
 ·
 [CDC NSSP emergency department trends](https://data.cdc.gov/d/rdmq-nq56)
 
-> ⚠️ **This agent plans outreach. It does not practise medicine.** Everything here is aggregate and
+> ⚠️ **This agent plans outreach. It does not practice medicine.** Everything here is aggregate and
 > place-based by design, and the line is not a formality: an agent that moves from "this
-> neighbourhood has a high modelled prevalence of diabetes" to anything resembling advice about a
+> neighborhood has a high modeled prevalence of diabetes" to anything resembling advice about a
 > person has left the challenge. Keep your framing on where the van goes and why, and you will never
 > meet that boundary. If your demo shows an agent talking to a patient, you have built the wrong
 > thing.

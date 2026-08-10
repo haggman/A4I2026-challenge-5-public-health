@@ -2,7 +2,7 @@
 
 This folder is empty on purpose.
 
-We built the on-ramp: every federally recognised care site in your county with coordinates, the
+We built the on-ramp: every federally recognized care site in your county with coordinates, the
 census tracts around them with disease burden, insurance, vehicle access and mobility, the federal
 shortage designations with the withdrawal trap already filtered out, the air at the only scale it
 works, the current respiratory signal with its real resolution stated, both distances computed for
@@ -19,7 +19,7 @@ on.
   will ask are at the bottom of this file.
 - **At least one tool you built yourself.** A Python function tool, or one you defined in MCP
   Toolbox—either counts. The obvious candidate wraps a tract query. The more valuable one holds the
-  logic that is not a single query: deciding what "needs the van" means, weighing a modelled
+  logic that is not a single query: deciding what "needs the van" means, weighing a modeled
   prevalence against a measured distance, turning a ranked list into a plan with a recommendation
   and a reason attached. Consuming only prebuilt generic tools and calling that your design does not
   count.
@@ -57,7 +57,7 @@ probe 2 below finds it in a single question.
 ## The API, verified in a lab project on 2026-08-10
 
 **`SequentialAgent`, `ParallelAgent` and `LoopAgent` all still work, and all three are deprecated**
-in favour of the graph `Workflow`:
+in favor of the graph `Workflow`:
 
 ```
 DeprecationWarning: SequentialAgent is deprecated in favor of Workflow and will be
@@ -156,15 +156,15 @@ justification signals that you inherited a pattern rather than chose one.
 
 **Your tables are at four different resolutions and not one of them says so.**
 
-A census tract. A 12 km modelling grid wearing an eleven-digit tract ID. A facility point. A
+A census tract. A 12 km modeling grid wearing an eleven-digit tract ID. A facility point. A
 multi-county Health Service Area written onto a county key. Every one of them is dressed up with an
 identifier that suggests more precision than it has, no query fails, and every ranking you build
 looks perfectly reasonable.
 
-An agent that says *"respiratory illness is rising in this neighbourhood"* from a four-county number
+An agent that says *"respiratory illness is rising in this neighborhood"* from a four-county number
 has produced something specific, plausible and false about people's health. An agent that says
 *"I can tell you what respiratory visits are doing across the four-county area that includes this
-one; I cannot tell you anything about this neighbourhood, and neither can anything else available
+one; I cannot tell you anything about this neighborhood, and neither can anything else available
 publicly"* is more useful, more honest, and will score better.
 
 That is the same shape as the trap in section 2 of the notebook, and it is the shape of the whole
